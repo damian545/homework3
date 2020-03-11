@@ -7,7 +7,16 @@
   align-items: center;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-
+p {
+  margin: 5px 0;
+}
+h2 {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+input [type="checkbox"] {
+  margin-right: 0;
+}
 .container {
   background-color: blue;
   padding: 3rem;

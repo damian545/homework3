@@ -1,4 +1,3 @@
-console.log(getRandomSymbol());
 const resultEl = document.getElementById("result");
 const lengthEl = document.getElementById("length");
 const uppercaseEl = document.getElementById("uppercase");
@@ -6,7 +5,6 @@ const lowercaseEl = document.getElementById("lowercase");
 const numbersEl = document.getElementById("numbers");
 const symbolsEl = document.getElementById("symbols");
 const generateEl = document.getElementById("generate");
-const clipboard = document.getElementById("clipboard");
 
 const randomFunc = {
   lower: getRandomLower,
@@ -15,22 +13,7 @@ const randomFunc = {
   symbol: getRandomSymbol
 };
 
-clipboard.addEventListener("click", () => {
-  const textarea = document.createElement("textarea");
-  const password = resultEl.innerText;
-
-  if (!password) {
-    return;
-  }
-
-  textarea.value = password;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand("copy");
-  textarea.remove();
-  alert("Password copied to clipboard");
-});
-
+//
 generateEl.addEventListener("click", event => {
   event.preventDefault();
   const length = +lengthEl.value;
@@ -39,22 +22,30 @@ generateEl.addEventListener("click", event => {
   const hasNumber = numbersEl.checked;
   const hasSymbol = symbolsEl.checked;
 
-  resultEl.innerText = generatePassword;
-  hasLower, hasUpper, hasNumber, hasSymbol, length;
+  resultEl.innerText = generatePassword(
+    hasLower,
+    hasUpper,
+    hasNumber,
+    hasSymbol,
+    length
+  );
 });
-
+// Generating the type of password //
 function generatePassword(lower, upper, number, symbol, length) {
   let generatedPassword = "";
   var typescount = lower + upper + number + symbol;
-  const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
-    item => Object.values(item)[0]
-  );
 
   if (typescount === 0) {
     return "";
   }
-  for (let i = 0; i < length; i += typesCount) {
-    typesArray.forEach(type => {
+
+  // finding the value of the password//
+  const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
+    item => Object.values(item)[0]
+  );
+
+  for (let i = 0; i < length; i += typescount) {
+    typesArr.forEach(type => {
       const funcName = Object.keys(type)[0];
       generatedPassword += randomFunc[funcName]();
     });
@@ -63,7 +54,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 
   return finalPassword;
 }
-
+// The random lower upper number and symbol length//
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -80,18 +71,3 @@ function getRandomSymbol() {
   const symbols = "!@#$%^&*()+=?";
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
-const floating_btn = document.querySelector(".floating-btn");
-const close_btn = document.querySelector(".close_btn");
-const social_panel_container = document.querySelector(
-  ".social_panel_container"
-);
-floating_btn.addEventListener("click", () => {
-  social_panel_container.classList.toggle("visible");
-});
-close_btn.addEventListener("click", () => {
-  social_panel_container.classList.remove("visible");
-});
-password.addEventListener("click", event => {
-  event.preventDefault();
-  passWordClick();
-});
