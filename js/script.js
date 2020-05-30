@@ -13,7 +13,7 @@ const randomFunc = {
   symbol: getRandomSymbol
 };
 
-//
+//click on what type of password you want
 generateEl.addEventListener("click", event => {
   event.preventDefault();
   const length = +lengthEl.value;

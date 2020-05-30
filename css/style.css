@@ -42,3 +42,6 @@ input [type="checkbox"] {
   cursor: pointer;
   border-radius: 1rem;
 }
+aside {
+  text-align: center;
+}
