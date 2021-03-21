@@ -1,26 +1,16 @@
-@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-body {
-  background-image: url("./images/letters-numbers-symbols-background-28975954.jpg");
-  color: #fff;
+.body {
+  background-color: black;
+  color: white;
   display: flex;
-  font-family: "Muli", sans-serif;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
   min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-
 p {
   margin: 5px 0;
 }
-
 h2 {
-  color: yellow;
   margin: 10px 0 20px;
   text-align: center;
 }
@@ -28,56 +18,30 @@ input [type="checkbox"] {
   margin-right: 0;
 }
 .container {
-  background-color: #23235b;
-  box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
-  padding: 20px;
-  width: 350px;
-  max-width: 100%;
-}
-.results-container {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: blue;
+  padding: 3rem;
+  border-radius: 1rem;
+  border: 2px solid black;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  font-size: 18px;
-  letter-spacing: 1px;
-  padding: 12px 10px;
-  height: 50px;
-  width: 100%;
+  flex-direction: column;
 }
-.results-container #result {
-  word-wrap: break-word;
-  max-width: calc(100% - 40px);
-}
-.results-container .btn {
-  font-size: 20px;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  height: 40px;
-  width: 40px;
+.form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 .btn {
-  border: none;
-  color: #fff;
+  grid-column: span 2;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 16px;
-  padding: 8px 12px;
-  background-color: #3b3b98;
+  border-radius: 1rem;
 }
-.btn-large {
-  display: block;
-  width: 100%;
-}
-.setting {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px 0;
-}
-@media screen and (max-width: 400px) {
-  .results-container {
-    font-size: 14px;
-  }
+aside {
+  text-align: right;
 }
